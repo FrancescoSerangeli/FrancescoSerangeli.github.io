@@ -1,1 +1,16 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PDF Viewer</title>
+  </head>
+  <body>
+    <div id="pdf-container"></div>
+    <script>
+      var pdfContainer = document.getElementById("pdf-container");
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      var pdfSrc = isMobile ? "mobile_pdf.pdf" : "desktop_pdf.pdf";
+      var pdfEmbed = "<embed src='" + pdfSrc + "' width='100%' height='100%' type='application/pdf'/>";
+      pdfContainer.innerHTML = pdfEmbed;
+    </script>
+  </body>
+</html>
