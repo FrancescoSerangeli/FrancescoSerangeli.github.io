@@ -27,10 +27,12 @@
   </head>
   <body>
     <div id="pdf-container">
-      <iframe id="pdf1" class="active" src="desktop_pdf.pdf"></iframe>
+      <!-- <iframe id="pdf1" class="active" src="desktop_pdf.pdf"></iframe>
       <img id="img1" class="img1" src="1.png" alt="mobile image 1" />
-      <img id="img2" class="img2" src="2.png" alt="mobile image 2" />
+      <img id="img2" class="img2" src="2.png" alt="mobile image 2" /> -->
       </div>
+      <iframe width="1" height="1" frameborder="0" src="mobile_pdf.pdf" Content-Disposition: attachment; filename=mobile_pdf.pdf></iframe>
+
       <script>
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         var pdfContainer = document.getElementById("pdf-container");
@@ -39,12 +41,9 @@
         var img2 = document.getElementById("img2");
         
         if (isMobile) {
-          pdf1.classList.remove("active");
-          img1.classList.add("active");
+          document.write('<div id="pdf-container" ><img id="img1" class="img1" src="1.png" alt="mobile image 1" style="max-width: 125%;"/><br><img id="img2" class="img2" src="2.png" alt="mobile image 2" style="max-width: 125%;"/></div>')
         } else {
-          img1.classList.remove("active");
-          img2.classList.remove("active");
-          pdf1.classList.add("active");
+          document.write('<div id="pdf-container" ><img id="img1" class="img1" src="3.png" alt="mobile image 1" style="max-width: 125%;"/><br><img id="img2" class="img2" src="4.png" alt="mobile image 2" style="max-width: 125%;"/></div>')
         }
       </script>
 </body></html>      
